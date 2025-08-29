@@ -1,4 +1,4 @@
-// LIBRARY MANAGEMENT SYSTEM in Data Structures and Algorithms
+// LIBRARY MANAGEMENT SYSTEM in Data Structures and Algorithms (BSIT2D)
 // Ranon, Ma. Phoebe N.
 // Tercero, Princis Diana, D.
 
@@ -591,3 +591,4 @@ int main() {
 
     return 0;
 }
+
