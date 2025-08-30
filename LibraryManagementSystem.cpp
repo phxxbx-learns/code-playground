@@ -1,6 +1,6 @@
-// LIBRARY MANAGEMENT SYSTEM in Data Structures and Algorithms
+// LIBRARY MANAGEMENT SYSTEM in Data Structures and Algorithms (BSIT2D)
 // Ranon, Ma. Phoebe N.
-// Tercero, Princis Diana, D.
+// Tercero, Princis Diana D.
 
 #include <iostream>
 #include <fstream>
@@ -135,12 +135,12 @@ public:
     
     // displays user info and borrowed books
     void displayUser() {
-        cout<<"User ID: "<<userID<<endl;
-        cout<<"Name: "<<name<<endl;
+        cout<<endl<<"                               User ID: "<<userID<<endl;
+        cout<<"                               Name: "<<name<<endl;
         if (borrowedBooks.empty()) {
-            cout<<"No books borrowed."<<endl;
+            cout<<"                               No books borrowed."<<endl;
         } else {
-            cout<<"Borrowed books ISBNs: ";
+            cout<<"                               Borrowed books ISBNs: ";
             for (int i = 0; i < borrowedBooks.size(); i++) {
                 cout<<borrowedBooks[i]<<" ";
             }
@@ -430,7 +430,7 @@ public:
     void displayBorrowedBooks(string userID) {
         for (int i = 0; i < users.size(); i++) {
             if (users[i]->getUserID() == userID) {
-                cout<<endl<<"============================= BORROWED BOOKS FOR USER "<<userID<<" ========================"<<endl;
+                cout<<endl<<"============================= BORROWED BOOKS FOR USER "<<userID<<" ========================"<<endl<<endl;
                 vector<string> borrowed = users[i]->getBorrowedBooks();
                 if (borrowed.empty()) {
                     cout<<"No books borrowed!"<<endl;
@@ -592,3 +592,4 @@ int main() {
 
     return 0;
 }
+
