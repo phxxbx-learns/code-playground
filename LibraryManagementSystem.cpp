@@ -1,4 +1,4 @@
-// LIBRARY MANAGEMENT SYSTEM in Data Structures and Algorithms (BSIT2D)
+// LIBRARY MANAGEMENT SYSTEM in Data Structures and Algorithms
 // Ranon, Ma. Phoebe N.
 // Tercero, Princis Diana, D.
 
@@ -170,7 +170,7 @@ private:
             file.ignore();
             Book newBook(title, author, isbn);
             newBook.setAvailable(available);
-            books.push_back(make_unique<Book>(title, author, isbn));
+            books.push_back(std::unique_ptr<Book>(new Book(title, author, isbn)));
             books.back()->setAvailable(available);
         }
         file.close();
@@ -208,7 +208,7 @@ private:
             if (!borrowedLine.empty()) {
                 newUser.borrowBook(borrowedLine);
             }
-            users.push_back(make_unique<LibraryUser>(newUser));
+            users.push_back(std::unique_ptr<LibraryUser>(new LibraryUser(newUser)));
         }
         file.close();
     }
@@ -250,7 +250,7 @@ public:
                 return;
             }
         }
-        books.push_back(make_unique<Book>(title, author, isbn));
+        books.push_back(std::unique_ptr<Book>(new Book(title, author, isbn)));
         cout<<"Book added successfully!"<<endl;
     }
     
@@ -279,7 +279,8 @@ public:
                 return;
             }
         }
-        users.push_back(make_unique<LibraryUser>(userID, name));
+        users.push_back(std::unique_ptr<LibraryUser>(new LibraryUser(userID, name)));
+
         cout<<"User registered successfully!"<<endl;
     }
     
@@ -591,4 +592,3 @@ int main() {
 
     return 0;
 }
-
